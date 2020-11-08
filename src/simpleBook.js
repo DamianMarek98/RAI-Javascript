@@ -6,11 +6,11 @@ module.exports = function SimpleBook(title, author, publishmentYear, dateOfBorro
         this.borrower = borrower;
 
    this.isAvailable = function () {
-        return this.borrower !== null;
+        return this.borrower === null;
     }
 
     this.borrow = function (person, date) {
-        if (!this.isAvailable()) {
+        if (this.isAvailable()) {
             this.borrower = person;
             this.dateOfBorrow = date;
             return true;
