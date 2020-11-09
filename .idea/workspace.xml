@@ -19,11 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5831abc-d319-43d2-a683-63dfe9557f4c" name="Default Changelist" comment="first 3 tasks code">
-      <change afterPath="$PROJECT_DIR$/test/simple_book_tests.js" afterDir="false" />
+    <list default="true" id="e5831abc-d319-43d2-a683-63dfe9557f4c" name="Default Changelist" comment="* fixed bug&#10;* added book class and test for new functions">
+      <change afterPath="$PROJECT_DIR$/src/bookLibrary.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/book_library_tests.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simpleBook.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/simpleBook.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/book_tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/book_tests.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,13 +49,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.15.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.6" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Mocha.book-tests">
-    <configuration name="book-tests" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Mocha.book-full-library-tests.Most often borrowed should return book with least from highest as lat">
+    <configuration name="book-full-library-tests" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -64,13 +66,13 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/test/book_tests.js</test-file>
+      <test-file>$PROJECT_DIR$/test/book_library_tests.js</test-file>
       <test-names>
-        <name value="book-tests" />
+        <name value="book-full-library-tests" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="book-tests.extend should add 14 days to borrow days when no param is given" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="book-full-library-tests.Most often borrowed should return book with least from highest as lat" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -79,14 +81,14 @@
       <ui>bdd</ui>
       <extra-mocha-options />
       <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/test/book_tests.js</test-file>
+      <test-file>$PROJECT_DIR$/test/book_library_tests.js</test-file>
       <test-names>
-        <name value="book-tests" />
-        <name value="extend should add 14 days to borrow days when no param is given" />
+        <name value="book-full-library-tests" />
+        <name value="Most often borrowed should return book with least from highest as lat" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="book-tests.extend should add days to borrow days" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="book-library-compare-tests" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -94,15 +96,14 @@
       <pass-parent-env>true</pass-parent-env>
       <ui>bdd</ui>
       <extra-mocha-options />
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/test/book_tests.js</test-file>
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/test/book_library_tests.js</test-file>
       <test-names>
-        <name value="book-tests" />
-        <name value="extend should add days to borrow days" />
+        <name value="book-library-compare-tests" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="book-tests.hasExpired should return false when book is not loaned" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="book-simple-library-tests" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -110,15 +111,14 @@
       <pass-parent-env>true</pass-parent-env>
       <ui>bdd</ui>
       <extra-mocha-options />
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/test/book_tests.js</test-file>
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/test/book_library_tests.js</test-file>
       <test-names>
-        <name value="book-tests" />
-        <name value="hasExpired should return false when book is not loaned" />
+        <name value="book-simple-library-tests" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="book-tests.hasExpired should return true when book hase exdtened loan" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="test\book_library_tests.js" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -126,21 +126,17 @@
       <pass-parent-env>true</pass-parent-env>
       <ui>bdd</ui>
       <extra-mocha-options />
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/test/book_tests.js</test-file>
-      <test-names>
-        <name value="book-tests" />
-        <name value="hasExpired should return true when book hase exdtened loan" />
-      </test-names>
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/test/book_library_tests.js</test-file>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Mocha.book-tests" />
-        <item itemvalue="Mocha.book-tests.extend should add days to borrow days" />
-        <item itemvalue="Mocha.book-tests.extend should add 14 days to borrow days when no param is given" />
-        <item itemvalue="Mocha.book-tests.hasExpired should return true when book hase exdtened loan" />
-        <item itemvalue="Mocha.book-tests.hasExpired should return false when book is not loaned" />
+        <item itemvalue="Mocha.book-full-library-tests.Most often borrowed should return book with least from highest as lat" />
+        <item itemvalue="Mocha.book-full-library-tests" />
+        <item itemvalue="Mocha.book-simple-library-tests" />
+        <item itemvalue="Mocha.test\book_library_tests.js" />
+        <item itemvalue="Mocha.book-library-compare-tests" />
       </list>
     </recent_temporary>
   </component>
@@ -152,7 +148,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604845955964</updated>
-      <workItem from="1604845957340" duration="3785000" />
+      <workItem from="1604845957340" duration="12827000" />
     </task>
     <task id="LOCAL-00001" summary="first 3 tasks code">
       <created>1604846026492</created>
@@ -161,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604846026492</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="* fixed bug&#10;* added book class and test for new functions">
+      <created>1604852428879</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604852428879</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,28 +183,97 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first 3 tasks code" />
-    <option name="LAST_COMMIT_MESSAGE" value="first 3 tasks code" />
+    <MESSAGE value="* fixed bug&#10;* added book class and test for new functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="* fixed bug&#10;* added book class and test for new functions" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1899" height="285" key="GridCell.Tab.0.bottom" timestamp="1604852400104">
+    <state x="728" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604852471414">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604852400104" />
-    <state width="1899" height="285" key="GridCell.Tab.0.center" timestamp="1604852400104">
+    <state x="728" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604852471414" />
+    <state width="1899" height="352" key="GridCell.Tab.0.bottom" timestamp="1604880377077">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="285" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604852400104" />
-    <state width="1899" height="285" key="GridCell.Tab.0.left" timestamp="1604852400104">
+    <state width="1899" height="352" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604880377077" />
+    <state width="1899" height="352" key="GridCell.Tab.0.center" timestamp="1604880377077">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="285" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604852400104" />
-    <state width="1899" height="285" key="GridCell.Tab.0.right" timestamp="1604852400104">
+    <state width="1899" height="352" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604880377077" />
+    <state width="1899" height="352" key="GridCell.Tab.0.left" timestamp="1604880377077">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1899" height="285" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604852400104" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1604846028338">
+    <state width="1899" height="352" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604880377077" />
+    <state width="1899" height="352" key="GridCell.Tab.0.right" timestamp="1604880377077">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604846028338" />
+    <state width="1899" height="352" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604880377077" />
+    <state width="1899" height="352" key="GridCell.Tab.1.bottom" timestamp="1604880377446">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="352" key="GridCell.Tab.1.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604880377446" />
+    <state width="1899" height="352" key="GridCell.Tab.1.center" timestamp="1604880377445">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="352" key="GridCell.Tab.1.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604880377445" />
+    <state width="1899" height="352" key="GridCell.Tab.1.left" timestamp="1604880377445">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="352" key="GridCell.Tab.1.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604880377445" />
+    <state width="1899" height="352" key="GridCell.Tab.1.right" timestamp="1604880377446">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="352" key="GridCell.Tab.1.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604880377446" />
+    <state width="1899" height="352" key="GridCell.Tab.2.bottom" timestamp="1604880376943">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="352" key="GridCell.Tab.2.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604880376943" />
+    <state width="1899" height="352" key="GridCell.Tab.2.center" timestamp="1604880376943">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="352" key="GridCell.Tab.2.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604880376943" />
+    <state width="1899" height="352" key="GridCell.Tab.2.left" timestamp="1604880376943">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="352" key="GridCell.Tab.2.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604880376943" />
+    <state width="1899" height="352" key="GridCell.Tab.2.right" timestamp="1604880376943">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="352" key="GridCell.Tab.2.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604880376943" />
+    <state width="1899" height="352" key="GridCell.Tab.3.bottom" timestamp="1604880376943">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="352" key="GridCell.Tab.3.bottom/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604880376943" />
+    <state width="1899" height="352" key="GridCell.Tab.3.center" timestamp="1604880376943">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="352" key="GridCell.Tab.3.center/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604880376943" />
+    <state width="1899" height="352" key="GridCell.Tab.3.left" timestamp="1604880376943">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="352" key="GridCell.Tab.3.left/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604880376943" />
+    <state width="1899" height="352" key="GridCell.Tab.3.right" timestamp="1604880376943">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1899" height="352" key="GridCell.Tab.3.right/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604880376943" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1604852437343">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604852437343" />
+    <state x="667" y="258" width="585" height="534" key="find.popup" timestamp="1604877748415">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="667" y="258" width="585" height="534" key="find.popup/0.0.1920.1050/-1920.0.1920.1050@0.0.1920.1050" timestamp="1604877748415" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="mocha-javascript-test-runner">
+        <watch expression="book" language="JavaScript" />
+        <watch expression="library.mostOftenBorrowed()" language="JavaScript" />
+        <watch expression="library.books" language="JavaScript" />
+        <watch expression="library.mostOftenBorrowed().map(book =&gt; book.listOfBorrowings.filter(elem =&gt; elem.type === 'B').length)" language="JavaScript" />
+        <watch expression="library.books.map(book =&gt; book.listOfBorrowings.filter(elem =&gt; elem.type === 'B').length)" language="JavaScript" />
+        <watch expression="book.listOfBorrowings.filter(elem =&gt; elem.type === 'B').length" language="JavaScript" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

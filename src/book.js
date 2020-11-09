@@ -6,7 +6,7 @@ module.exports = class Book {
         this.dateOfBorrow = dateOfBorrow;
         this.borrower = borrower;
         this.borrowForDays = 14;
-        this.listOfBorrowings = [];
+        this.listOfBorrowings = [{borrower : borrower, type : 'B'}];
     }
 
     isAvailable() {
@@ -33,9 +33,13 @@ module.exports = class Book {
     }
 
     return() {
-        this.listOfBorrowings.push({borrower : this.borrower, type : 'R'})
-        this.borrower = null;
-        this.dateOfBorrow = null;
+        if (!this.isAvailable()) {
+            this.listOfBorrowings.push({borrower: this.borrower, type: 'R'})
+            this.borrower = null;
+            this.dateOfBorrow = null;
+        } else {
+            return false;
+        }
     }
 
     whoHas() {

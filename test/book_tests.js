@@ -15,11 +15,38 @@ describe('book-tests', function()
         expect(book.borrow("Test", "01.01.2020")).eq(false);
     });
 
-    it('Should not be able to borrow available book', function()
+    it('Should be able to borrow available book', function()
     {
         book.return();
 
         expect(book.borrow("Test", "01.02.2020")).eq(true);
+    });
+
+    it('Should add to list of borrowings when borrow is successful', function()
+    {
+        book.return();
+        let num = book.listOfBorrowings.length;
+        book.borrow("Damian", "01.02.2020");
+
+        expect(book.listOfBorrowings.length).eq(num + 1);
+    });
+
+    it('Should not add to list of borrowings when borrow is unsuccessful', function()
+    {
+        let num = book.listOfBorrowings.length;
+        book.borrow("Damian", "01.02.2020");
+
+        expect(book.listOfBorrowings.length).eq(num);
+    });
+
+    it('Should add to list of borrowings certain elem when borrow is successful', function()
+    {
+        book.return();
+        book.borrow("Damian", "01.02.2020");
+        let elem = book.listOfBorrowings.pop();
+        let eval = elem.borrower === "Damian" && elem.type === 'B';
+
+        expect(eval).eq(true)
     });
 
     it('Return should leave borrower null', function()
@@ -34,6 +61,41 @@ describe('book-tests', function()
         book.return();
 
         expect(book.dateOfBorrow).eq(null);
+    });
+
+    it('Return should return false if book is not available', function()
+    {
+        book.return();
+
+        expect(book.return()).eq(false);
+    });
+
+    it('Should add to list of borrowings when return is successful', function()
+    {
+        let num = book.listOfBorrowings.length;
+        book.return();
+
+        expect(book.listOfBorrowings.length).eq(num + 1);
+    });
+
+    it('Should not add to list of borrowings when return is unsuccessful', function()
+    {
+        book.return();
+        let num = book.listOfBorrowings.length;
+        book.return();
+
+        expect(book.listOfBorrowings.length).eq(num);
+    });
+
+    it('Should add to list of borrowings certain elem when return is successful', function()
+    {
+        book.return();
+        book.borrow("Damian", "01.02.2020");
+        book.return();
+        let elem = book.listOfBorrowings.pop();
+        let eval = elem.borrower === "Damian" && elem.type === 'R';
+
+        expect(eval).eq(true)
     });
 
     it('isAvailable should return false when book is borrowed', function()
