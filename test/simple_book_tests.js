@@ -1,7 +1,7 @@
 let expect = require('chai').expect;
 let SimpleBook = require('../src/simpleBook');
 
-describe('book-tests', function () {
+describe('simple-book-tests', function () {
     let book;
 
     beforeEach(function () {
@@ -9,13 +9,13 @@ describe('book-tests', function () {
     });
 
     it('Should be able to set fields', function () {
-        book.title = "Test";
+        book.SetTitle("Test");
 
         expect(book.title).eq("Test");
     });
 
     it('Should be able to get fields', function () {
-        let title = book.title;
+        let title = book.GetTitle();
 
         expect(title).eq("Clean code");
     });

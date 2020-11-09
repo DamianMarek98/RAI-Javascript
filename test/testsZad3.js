@@ -37,13 +37,13 @@ describe('code-tests', function () {
         })
 
         it('Decomposition of structure should work', function () {
-            var a, b;
+            let a, b;
             ({a, b} = {a: 1, b: 2})
             expect(a === 1 && b === 2).eq(true);
         })
 
         it('Decomposition of list should work', function () {
-            var a, b;
+            let a, b;
             [a, , b] = [1, 2, 3];
             expect(a === 1 && b === 3).eq(true);
         })
