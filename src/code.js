@@ -23,7 +23,7 @@ module.exports = function () {
 
     this.expectedNum = 15;
     this.answear = 0;
-    this.fNestedThis = function() {
+    this.fNestedThis = function () {
         let num;
         [1, 2, 3, 5, 15].forEach(function (v) {
             if (v % 5 === 0) {

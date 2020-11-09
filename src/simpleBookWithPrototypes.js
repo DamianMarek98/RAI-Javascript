@@ -1,9 +1,9 @@
 module.exports = function SimpleBookWithPrototypes(title, author, publishmentYear, dateOfBorrow, borrower) {
-        this.title = title;
-        this.autohr = author;
-        this.publishmentYear = publishmentYear;
-        this.dateOfBorrow = dateOfBorrow;
-        this.borrower = borrower;
+    this.title = title;
+    this.autohr = author;
+    this.publishmentYear = publishmentYear;
+    this.dateOfBorrow = dateOfBorrow;
+    this.borrower = borrower;
 
     SimpleBookWithPrototypes.prototype.setTitile = function (value) {
         this.title = value;
@@ -45,11 +45,11 @@ module.exports = function SimpleBookWithPrototypes(title, author, publishmentYea
         return this.borrower;
     }
 
-    SimpleBookWithPrototypes.prototype.isAvailable = function() {
+    SimpleBookWithPrototypes.prototype.isAvailable = function () {
         return this.getBorrower() !== null;
     }
 
-    SimpleBookWithPrototypes.prototype.borrow = function(person, date) {
+    SimpleBookWithPrototypes.prototype.borrow = function (person, date) {
         if (!this.isAvailable()) {
             this.setBorrower(person);
             this.setDateOfBorrow(date);
@@ -63,7 +63,7 @@ module.exports = function SimpleBookWithPrototypes(title, author, publishmentYea
         this.setDateOfBorrow(null);
     }
 
-    SimpleBookWithPrototypes.prototype.whoHas = function() {
+    SimpleBookWithPrototypes.prototype.whoHas = function () {
         return this.getBorrower();
     }
 }
